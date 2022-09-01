@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./Pages/Home";
+import {  Routes, Route } from "react-router-dom";
+import FrontPage from "./Pages/FrontPage/FrontPage";
+import {UserContextProvider} from "./Context/UserAuthContext"
+import Profile from "./Pages/Profile/Profile";
+import ProtectedRoute from "./ProtectedRoute";
+// import { ToastContainer } from "react-toastify"
+
 
 function App() {
+  // const user = null;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+      <UserContextProvider>
+        <Routes>
+          <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
+          <Route path="/frontpage" element={<FrontPage/>}/>
+          <Route path="/profile" element={<ProtectedRoute><Profile/> </ProtectedRoute>}/>
+      </Routes>
+      </UserContextProvider>
+      {/* <ToastContainer/> */}
     </div>
   );
 }

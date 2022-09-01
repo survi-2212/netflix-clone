@@ -1,0 +1,110 @@
+.LoginScreen{
+    position: relative;
+    height: 100%;
+    background: url("https://preranatvchannel.com/wp-content/uploads/2022/07/image-2339.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+}
+/* .LoginScreenBackground{
+    /* width: 100%; * */
+.LoginLogo{
+    position: fixed; 
+     left: 0; 
+    width: 150px;
+    object-fit: contain;
+    padding-left: 20px;
+}
+
+.Login_button{
+    position: fixed;
+    right: 20px;
+    top: 20px;  
+    padding: 10px 20px;
+    margin-right: 20px;
+    font-size: 1rem;
+    color: white;
+    background-color:#e50914;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+
+}
+
+.Login_button:hover{
+    transform: scale(1.09);
+    transition: 0.2s ease-in;
+}
+
+.login_gradient{
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+
+    background: rgba(0,0,0,0.4);
+    background-image: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8) 0,
+        rgba(0,0,0,0) 60%,
+        rgba(0,0,0,0.8) 100%,
+
+    )}
+
+    .login_body{
+        position: absolute;
+        top: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: white;
+        z-index: 1;
+        padding: 20px;
+        /* width: 100%; */
+        left: 0;
+        right: 0;
+        
+    }
+
+    .login_body > h1{
+        font-size: 3.1rem;
+        margin-bottom: 20px;
+    }
+    .login_body > h2{
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+    .login_body > h3{
+        font-size: 1.3rem;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    .login_input > form > input{
+
+        padding: 20px;
+        outline: none;
+        height: 30px;
+        width: 30%;
+        border: none;
+        max-width: 600px;
+        letter-spacing: 3x;
+    }
+    .login_button_started{
+        padding: 9.5px 20px;
+        padding-bottom: 12px;
+        font-size: 1rem;
+        color: white;
+        background-color: #e50914;
+        border: none;
+        cursor: pointer;
+        
+    }
+
+    .login_button_started:hover{
+        transform: scale(1.09);
+        transition: 0.2s ease-in;
+        
+    }
+    
