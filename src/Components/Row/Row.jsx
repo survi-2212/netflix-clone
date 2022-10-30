@@ -34,10 +34,11 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
       setTrailerUrl("");
     } else {
       movieTrailer(movie?.original_title || movie?.title || movie?.name ||"")
+      // https://www.youtube.com/watch?v=XtMThy8QKqU&t=560s
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
-        })
+        }) 
         .catch((error) => console.log(error));
     }
   };

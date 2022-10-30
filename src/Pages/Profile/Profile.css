@@ -62,3 +62,25 @@
 .profile_plans > p{
     margin-top: 10px;
 }
+
+@media screen and (max-width:425px) {
+    .profile_body > h1{
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    .profile_info > img{
+        height: 50px;
+    }
+    .profile_details > h2{
+        
+        padding: 10px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    .profile_signout{
+        padding: 10px 20px;
+        margin-top: 10%;
+        width: 100%;
+        
+    }
+}

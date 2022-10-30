@@ -3,13 +3,15 @@ import "./SignIn.css";
 import { useUserAuth } from "../../Context/UserAuthContext";
 import { Alert, Snackbar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import GoogleButton from "react-google-button";
+
 
 function SignIn() {
   const navigate = useNavigate();
   const [hasAccount, sethasAccount] = useState(true);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const { signup, signin } = useUserAuth();
+  const { signup, signin ,signInwithGoogle } = useUserAuth();
   const [errorMessage, seterrorMessage] = useState("");
   const [successMessage, setsuccessMessage] = useState("");
   const [open, setOpen] = useState(false);
@@ -82,6 +84,25 @@ function SignIn() {
     setOpen(false);
   };
 
+  const handleGoogleSignIn =async (e)=>{
+    e.preventDefault();
+    setsuccessMessage("");
+
+    try {
+      await signInwithGoogle();
+      setsuccessMessage("Logged in Successful");
+      setOpen(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      seterrorMessage("Something wrong !!")
+    }
+    
+
+
+  }
+
   return (
     <div className="signIn_screen">
       <form>
@@ -135,7 +156,7 @@ function SignIn() {
             </h4>
           </>
         )}
-
+          <hr style={{marginTop:"10px", marginBottom: '6px'}}/>
         {errorMessage && (
             <>
               <Snackbar
@@ -172,6 +193,11 @@ function SignIn() {
               </Snackbar>
             </>
           )}
+          {hasAccount ? <>
+          <div className="google-button">
+            <GoogleButton style={{width: '100%'}} onClick={handleGoogleSignIn}/>
+          </div>
+          </> : ""}
       </form>
     </div>
   );
